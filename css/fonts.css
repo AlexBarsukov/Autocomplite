@@ -1,0 +1,19 @@
+body {
+    -webkit-font-smoothing: antialiased
+}
+
+@font-face {
+    font-family: 'Icons';
+    /*src: url('fonts/kontur-iconic-eco-webfont.eot');*/
+    src: url('fonts/kontur-iconic-eco-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    /*src: url('fonts/kontur-iconic-eco-webfont.eot');*/
+    src: url('fonts/Kontur-Iconic-eco-20px.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal
+}

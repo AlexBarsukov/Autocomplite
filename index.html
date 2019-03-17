@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Автокомплит</title>
+    <meta name="title" content="Автокомплит – Контур.Гайды">
+
+
+
+    <link rel="stylesheet" href="css/common.css">
+   
+    <link rel="stylesheet" href="css/style.css">
+   
+    <script src="script/myscript/autocomp.js"></script>
+    <script src="script/myscript/kladr.js"></script>
+
+</head>
+
+<body>
+    <div class="wrap"><input type="checkbox" id="nav_trigger" class="nav_show_checkbox"><label for="nav_trigger"><div class="fader"></div><div class="trigger-btn"><div></div><div></div><div></div></div></label>
+
+        <div class="container">
+            <div class="content">
+                <div>
+                    <div style="max-width:960px;" class="wrapper">
+                        <h1>Автокомплит<span> Autocomplete</span></h1>
+                        <div>
+                            <!--<p class="margin-b20">Автокомплит — это поле ввода с подсказками.</p><img src="img/autocomplete-01.png" />-->
+                            <div class="first-div" style="display:inline;">
+                                <input type="text" class="input-class" id="autocompValue" placeholder="Введите или выберите из списка                    ▼"
+                                    onkeyup="inputchange(this.value)" onfocus="openBox(this)" onblur="hideBox() " onmousedown="inputchange(this.value)">
+                                <div class="theList boxShadow" id="textBox">
+                                    <ul class="proverkaa" id="searchResult" type="none">
+                                    </ul>
+                                </div>
+                                <span class="error-text" id="errorText">Выберите значение из списка</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h2>Когда использовать</h2>
+                            <!--<style>
+                                .block{z-index:2 ;}
+                            </style>-->
+                            <div class="block">
+                                <br>
+                                <p>Автокомплит используют:</p>
+                                <ul>
+                                    <li class="prostoLi">для выбора значения из справочника,</li>
+                                    <li class="prostoLi">для добавления своего значения в справочник.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="block">
+                            <p>
+                                Используется автокомплит, если значений в справочнике слишком много, чтобы искать их глазами.
+                            </p>
+                        </div>
+                        <h2>Автокомплит со стрелкой</h2>
+                        <table width="1000">
+                            <tr style="vertical-align:top">
+                                <td style="padding-right:60px;width:50%;">
+                                    <div class="block">
+                                        <h3>Вид работы</h3><img src="pic/11.png" class="margin-20" />
+                                    </div>
+                                    <div class="block">
+                                        <p>
+                                            Используют для выбора одного значения из справочника. Стрелочка показывает, что поле работает по аналогии с раскрывающимся
+                                            списком: при клике снизу появляется список всех вариантов. Строки могут подгружаться
+                                            при прокрутке.
+                                        </p>
+                                    </div>
+                                    <div class="block">
+                                        <p>Этот вариант автокомплита используют, если:</p>
+                                    </div>
+                                    <div class="block">
+                                        <ol>
+                                            <li>
+                                                Пользователю удобно просматривать список, чтобы выбрать нужный вариант.
+                                            </li>
+                                            <li>
+                                                Количество и контекст вариантов позволяют это делать удобно. Например, сложно представить пользователя, который выбирает
+                                                свою налоговую инспекцию из нескольких сотен вариантов.
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <div class="block">
+                                        <p>
+                                            Контекст использования автокомплита тот же, что и у раскрывающегося списка. Его преимущество в том, что пользователь может
+                                            ввести значение самостоятельно, и автокомплит найдет его в списке. Но тут есть
+                                            и недостаток — нужно проверять введенные значения.
+                                        </p>
+                                    </div>
+
+                                </td>
+                                <td>
+                                    <div class="block-no-nuber">
+                                        <h3>Суть автокомплита</h3>
+                                    </div>
+                                    <div class="block-no-nuber">
+                                        <p>
+
+                                            Контекст использования автокомплита тот же, что и у раскрывающегося списка. Его преимущество в том, что пользователь может
+                                            ввести значение самостоятельно, и автокомплит найдет его в списке. Но тут есть
+                                            и недостаток — нужно проверять введенные значения.
+                                        </p>
+                                    </div>
+                                    <div class="block-no-nuber">
+                                        <p>
+                                            Чтобы заполнить такое поле, пользователь должен помнить первые буквы нужного значения, по которым автокомплит найдет подходящие
+                                            варианты.
+                                        </p>
+                                    </div>
+                    </div>
+                    </td>
+
+
+
+                    </tr>
+                    </table>
+                    <!--НОВЫЙ РАЗДЕЛ-->
+                    <h2>Описание возможностей</h2>
+                    <table width="1000">
+                        <tr style="vertical-align:top">
+                            <td style="padding-right:60px;width:50%;">
+                                <div class="block">
+                                    <h3>Состояние по умолчанию</h3>
+                                </div>
+                                <div class="block">
+                                    <p>
+                                        Плейсхолдер в поле говорит, что в поле можно ввести свое значение или выбрать его из списка вручную — «Введите или выберите
+                                        из списка». Или же плейсхолдер указывает, какие типы значений можно вводить — «Начните
+                                        вводить код или название».
+                                    </p>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr style="vertical-align:top">
+                            <td style="padding-right:60px;width:50%;">
+                                <div class="block">
+                                    <h3>Фокус по пустому полю</h3>
+                                </div>
+                                <div class="block">
+                                    <p>
+                                        При клике или получению фокуса плейсхолдер в поле становится чуть светлее, открывается список вариантов.
+                                    </p>
+                                </div>
+                                <div class="block">
+                                    <p>
+                                        Прокрутка должна быть сделана так, чтобы при достижении конца списка, не начинала прокручиваться сама страница. Так сделано,
+                                        например, во ВКонтакте.
+                                    </p>
+                                </div>
+
+                            </td>
+                            <td>
+                                <div class="block-no-nuber">
+                                    <h3>&nbsp</h3>
+                                </div>
+                                <div class="block-no-nuber">
+                                    <p>
+                                        По умолчанию список раскрывается вниз. Минимальная высота раскрывающегося списка 200 px, максимальная 450. Если снизу менее
+                                        200 px до конца страницы, список раскрывается вверх.
+                                    </p>
+                                </div><img src="pic/15.png" class="margin-20" />
+                            </td>
+                        </tr>
+                    </table>
+
+
+
+                    <table width="1000">
+                        <tr style="vertical-align:top">
+                            <td style="padding-right:60px;width:50%;">
+                                <div class="block">
+                                    <h3>Начало ввода</h3>
+                                </div>
+                                <div class="block">
+                                    <p>Создаетcя список вариантов, которые можно выбирать при наборе в текстовом поле. Изначально
+                                        этот список скрыт и становится доступным при получении полем фокуса или наборе текста.
+                                    </p>
+                                </div>
+                                <img src="pic/19.png" class="margin-20" />
+                </div>
+
+                </td>
+                <td>
+                    <div class="block-no-nuber">
+                        <h3>&nbsp</h3>
+                    </div>
+
+
+                    <div class="block-no-nuber">
+                        <p>
+                            При вводе первого символа список фильтруется. Оптимальное количество строк в списке — 5. После фильтрации список может быть
+                            очень большим, все результаты можно посмотреть с помощью скролла. Или уточнить запрос для сокращения
+                            поисковой выдачи
+                        </p>
+                    </div>
+                </td>
+                </tr>
+                </table>
+
+
+
+
+
+
+
+
+                <table width="1000">
+                    <tr style="vertical-align:top">
+                        <td style="padding-right:60px;width:50%;">
+                            <div class="block">
+                                <h3>Нет соответствий</h3>
+                            </div>
+
+                            <td>
+                                <div class="block-no-nuber">
+                                    <h3>&nbsp</h3>
+                                </div>
+                            </td>
+                    </tr>
+                    <tr style="vertical-align:top">
+                        <td style="padding-right:60px;width:50%;">
+                            <div class="block">
+                                <p>Если для введенного нет совпадений, об этом показывается текст:</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="block-no-nuber">
+                                <img src="pic/23.png" class="margin-20" />
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+
+
+                <table width="1000">
+                    <tr style="vertical-align:top">
+                        <td style="padding-right:60px;width:50%;">
+                            <div class="block">
+                                <h3>Потеря фокуса без выбора пункта из списка</h3>
+                            </div>
+                            <div class="block">
+                                <p>Если ничего не найдено, показываем ошибку:</p>
+                            </div>
+                            <img src="pic/23.png" class="margin-20" />
+                            <img src="pic/25.png" class="margin-20" />
+
+
+                        </td>
+                        <td>
+                            <div class="block-no-nuber">
+                                <h3>&nbsp</h3>
+                            </div>
+                            <div class="block-no-nuber">
+                                <p>Если найдено совпадение, то показываем его</p>
+                            </div>
+                            <img src="pic/26.png" class="margin-20" />
+
+
+
+                        </td>
+                    </tr>
+                </table>
+                <table width="1000">
+                    <tr style="vertical-align:top">
+                        <td style="padding-right:60px;width:50%;">
+                            <div class="block">
+                                <h3>Сделан выбор</h3>
+                            </div>
+                            <div class="block-no-nuber"><img src="pic/26_1.png" class="margin-20" /></div>
+                        </td>
+
+                    </tr>
+                </table>
+
+
+
+                <table width="1000">
+                    <tr style="vertical-align:top">
+                        <td style="padding-right:60px;width:50%">
+                            <div class="block">
+                                <h3>Фокус по заполненному полю</h3>
+                            </div>
+                            <div class="block">
+                                <p>
+                                    При получении фокуса поле ведет себя, как раскрывающийся список: введенное значение выделяется, раскрывается список, прокрученный
+                                    до выбранного значения:
+
+                            </div>
+                        </td>
+                        <td>
+                            <div class="block-no-nuber">
+                                <h3>&nbsp</h3>
+                            </div>
+                            <div class="block-no-nuber">
+
+                                <img src="pic/31.png" class="margin-20" />
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+                <!--<h2>Опция: Избранные варианты</h2>
+                <div class="block">
+                    <p>Если можете, предлагайте пользователю наиболее вероятные варианты еще</p>до начала ввода.
+                </div>
+                <table width="1000">
+                    <tr style="vertical-align:top">
+                        <td style="padding-right:60px;width:50%;">
+                            <div class="block">
+                                <h3>Фокус по пустому полю</h3>
+                            </div>
+                            <div class="block">
+                                <p>
+                                    Эти варианты показываются над основным списком, отделяются чертой.
+                                </p><img src="img/autocomplete-20.png" class="margin-20" />
+                                <div>
+                                    <p class="margin-b20">Автокомплит — это поле ввода с подсказками.</p><img src="img/autocomplete-01.png" />
+                                    <div class="first-div" style="display:inline;">
+                                        <input type="text" class="input-class" id="autocompValue" placeholder="Введите или выберите из списка                    ▼"
+                                            onkeyup="inputchange(this.value)" onfocus="openBox(this)" onblur="hideBox() " onmousedown="inputchange(this.value)">
+                                        <div class="theList boxShadow" id="textBox">
+                                            <div>
+                                                <ul id="ulPriorityCity" type="none">
+                                                    <li class="liClass" onmousedown="d(this)">Москва</li>
+                                                    <li class="liClass" onmousedown="d(this)">Санкт-Петербург</li>
+                                                    <li class="liClass" onmousedown="d(this)">Екатеринбург</li>
+                                                    <br>
+                                                    <hr id="hrLine">
+                                                </ul>
+                                                <ul class="proverkaa" id="searchResult" type="none">
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <span class="error-text" id="errorText">Выберите значение из списка</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="block-no-nuber">
+                                <h3>&nbsp</h3>
+                            </div>
+                            <div class="block-no-nuber">
+                                <p>
+                                    Показывается список из 3-5 вариантов с заголовком. Заголовок нужен для того, чтобы было понятно, что это не полный список:
+                                </p><img src="img/autocomplete-21.png" class="margin-20" />
+                            </div>
+                        </td>
+                    </tr>
+                </table>-->
+
+
+</body>
+
+</html>
